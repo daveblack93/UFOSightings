@@ -1,1 +1,8 @@
 resources/data/nuforc*
+
+**/BenchmarkDotNet.Artifacts
+**/.idea
+**/bin
+**/obj
+
+*.user
