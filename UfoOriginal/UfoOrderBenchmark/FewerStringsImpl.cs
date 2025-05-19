@@ -1,9 +1,8 @@
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 
-namespace UfoOriginal;
+namespace UfoOriginal.UfoOrderBenchmark;
 
-public class DictionaryHackImpl
+public class FewerStringsImpl
 {
     public static Dictionary<string, int> Run()
     {
@@ -17,6 +16,8 @@ public class DictionaryHackImpl
         {
             var span = line.AsSpan();
 
+            var lastChar = span[^1];
+
             var e = span.Split(',');
             Debug.Assert(e.MoveNext());
             Debug.Assert(e.MoveNext());
@@ -26,13 +27,14 @@ public class DictionaryHackImpl
             var country = line[e.Current];
 
             var key = $"{state},{country}".ToUpperInvariant();
-
-            //pointer to the original value
-            //ref int count = ref CollectionsMarshal.GetValueRefOrAddDefault(dict, key, out _);
-            //count += 1;
-
-            // i don't need the reference anymore
-            CollectionsMarshal.GetValueRefOrAddDefault(dict, key, out _) += 1;
+            if (dict.TryGetValue(key, out var value))
+            {
+                dict[key] = value + 1;
+            }
+            else
+            {
+                dict.Add(key, 1);
+            }
         }
 
         return dict;

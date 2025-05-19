@@ -1,4 +1,4 @@
-namespace UfoOriginal;
+namespace UfoOriginal.Extensions;
 
 public static class SpanByteExtensions
 {

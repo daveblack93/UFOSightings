@@ -1,10 +1,10 @@
 using System.Runtime.InteropServices;
 using BenchmarkDotNet.Attributes;
 
-namespace UfoOriginal;
+namespace UfoOriginal.LoopBenchmark;
 
 [MemoryDiagnoser]
-public class LoopBenchmarks
+public class LoopImpl
 {
     private static readonly List<int> Numbers = Enumerable.Range(0, 1000).ToList();
     private static readonly int[] NumbersArray = Enumerable.Range(0, 1000).ToArray();

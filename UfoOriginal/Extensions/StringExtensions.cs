@@ -1,6 +1,6 @@
 using System.Buffers;
 
-namespace UfoOriginal;
+namespace UfoOriginal.Extensions;
 
 public static class StringExtensions
 {

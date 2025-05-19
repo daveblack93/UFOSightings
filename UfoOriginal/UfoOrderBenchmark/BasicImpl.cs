@@ -1,4 +1,4 @@
-namespace UfoOriginal;
+namespace UfoOriginal.UfoOrderBenchmark;
 
 public class BasicImpl
 {

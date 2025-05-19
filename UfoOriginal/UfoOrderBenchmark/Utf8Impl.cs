@@ -1,9 +1,7 @@
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace UfoOriginal;
+namespace UfoOriginal.UfoOrderBenchmark;
 
 public class Utf8Impl
 {
@@ -22,6 +20,7 @@ public class Utf8Impl
         {
             ReadOnlySpan<byte> chunk = bufferSpan.Slice(0, read);
 
+            // To debug the content of the line: Encoding.UTF8.GetString(chunk[lineRanges.Current])
             var lineRanges = chunk.Split((byte)'\n');
             if (skip)
             {

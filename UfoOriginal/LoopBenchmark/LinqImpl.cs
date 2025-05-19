@@ -1,11 +1,11 @@
 using System.Runtime.InteropServices;
 using BenchmarkDotNet.Attributes;
 
-namespace UfoOriginal;
+namespace UfoOriginal.LoopBenchmark;
 
 [MemoryDiagnoser]
 //[DisassemblyDiagnoser(printSource: true)]
-public class LinqBenchmarks
+public class LinqImpl
 {
     private static readonly Random random = new Random(42);
 

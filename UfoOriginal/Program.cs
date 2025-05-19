@@ -1,8 +1,10 @@
 ﻿using BenchmarkDotNet.Running;
-using UfoOriginal;
+using UfoOriginal.UfoOrderBenchmark;
 
 //BenchmarkRunner.Run<UfoBenchmarks>();
 
 //BenchmarkRunner.Run<SplitBenchmarks>();
 
-BenchmarkSwitcher.FromAssembly(typeof(FewerStringsImpl).Assembly).Run();
+//DictionaryHackImpl.Run();
+//Utf8Impl.Run();
+BenchmarkSwitcher.FromAssembly(typeof(BasicImpl).Assembly).Run();
