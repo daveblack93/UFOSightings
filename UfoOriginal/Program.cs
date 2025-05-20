@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Running;
+using UfoOriginal;
 using UfoOriginal.LoopBenchmark;
 using UfoOriginal.UfoOrderBenchmark;
 
@@ -8,6 +9,8 @@ using UfoOriginal.UfoOrderBenchmark;
 
 //BenchmarkRunner.Run<LoopClassImpl>();
 
+BenchmarkRunner.Run<ArrayPoolImpl>();
+
 //DictionaryHackImpl.Run();
 //Utf8Impl.Run();
-BenchmarkSwitcher.FromAssembly(typeof(BasicImpl).Assembly).Run();
+//BenchmarkSwitcher.FromAssembly(typeof(BasicImpl).Assembly).Run();
